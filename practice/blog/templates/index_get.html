@@ -1,0 +1,31 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+    <h2>User Details</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">AboutMe</th>
+            <th scope="col">Address</th>
+            <th scope="col">PhoneNumber</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in user %}
+          <tr>
+            <th scope="row"> {{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.about_me }}</td>
+            <td>{{ item.address }}  {{item.city}}  {{item.state}}  {{item.country }}</td>
+            <td> {{ item.phone_number }} </td>
+            <td> {{ item.email }} </td>
+        </tr>
+         
+          {% endfor %}
+        </tbody>
+      </table>
+    
+{% endblock %}
